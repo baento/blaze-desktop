@@ -31,7 +31,7 @@ namespace Gui
         private void paramètresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingsForm settingsForm = new SettingsForm();
-            settingsForm.Show();
+            settingsForm.ShowDialog();
         }
     }
 }

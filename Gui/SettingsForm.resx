@@ -57,16 +57,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="toolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="enregistrerToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="saveButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABzSURBVDhPY/j69WvDt2/f/pODQXoZQIyYCfv+MwTPIQmD
         9ID0gg3ApoAYjGHAh/cficLD2QBS8SA1AJufkTGyWtoagM5HFwdhmAEfkPMCukJkzcjiIAw24MuXLwbI
         hqArRNaMLA7CYANAAGYISIA0/O0/AID67ECmnhNDAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="settingsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>133, 17</value>
+  </metadata>
+  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>306, 17</value>
+  </metadata>
+  <data name="errorProvider.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAMMOAADDDgAAAAAAAAAA
+        AAAAAAAA9vb2n/b29v/29vb/9vb2//b29v/29vb/9vb2//b29v/29vb/9vb2//b29v/29vb/9vb2//b2
+        9p8AAAAA9vb2n5rm+f8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //+a5vn/9vb2n/b29t8f0f7/AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8AzP//H9H+//b29t/29vZgmub5/wDM//8AzP//AMz//wDM//8AzP//AAAA/wAAAP8AzP//AMz//wDM
+        //8AzP//AMz//5rm+f/29vZgAAAAAPb29t8f0f7/AMz//wDM//8AzP//AMz//wAAAP8AAAD/AMz//wDM
+        //8AzP//AMz//x/R/v/29vbfAAAAAAAAAAD29vZgmub5/wDM//8AzP//AMz//wDM//8AzP//AMz//wDM
+        //8AzP//AMz//wDM//+a5vn/9vb2YAAAAAAAAAAAAAAAAPb29t8f0f7/AMz//wDM//8AzP//AAAA/wAA
+        AP8AzP//AMz//wDM//8f0f7/9vb23wAAAAAAAAAAAAAAAAAAAAD29vZgmub5/wDM//8AzP//AMz//wAA
+        AP8AAAD/AMz//wDM//8AzP//mub5//b29mAAAAAAAAAAAAAAAAAAAAAAAAAAAPb29t8f0f7/AMz//wDM
+        //8AAAD/AAAA/wDM//8AzP//H9H+//b29t8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD29vZgmub5/wDM
+        //8AzP//AAAA/wAAAP8AzP//AMz//5rm+f/29vZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPb2
+        9t8f0f7/AMz//wAAAP8AAAD/AMz//x/R/v/29vbfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAD29vZgmub5/wDM//8AzP//AMz//wDM//+a5vn/9vb2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAPb29t8f0f7/AMz//wDM//8f0f7/9vb23wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAD29vZgmub5/wDM//8AzP//mub5//b29mAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAPb29t8f0f7/H9H+//b29t8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD29vZg9vb2//b29v/29vZgAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAgAEAAAAAAAAAAAAAAAAAAIABAACAAQAAwAMAAMADAADgBwAA4AcAAPAPAADwDwAA+B8AAPgf
+        AAD8PwAA/D8AAA==
 </value>
   </data>
 </root>

@@ -1,8 +1,8 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Gui.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Core.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="ApiUrl" Type="(Web Service URL)" Scope="User">
+    <Setting Name="ApiBaseUri" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://test/</Value>
     </Setting>
     <Setting Name="ApiKey" Type="System.String" Scope="User">

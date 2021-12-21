@@ -9,7 +9,7 @@ namespace Core
         public static void Initialize()
         {
             APIClient = new HttpClient();
-            APIClient.BaseAddress = new Uri(Properties.Settings.Default.ApiUrl);
+            APIClient.BaseAddress = new Uri(Properties.Settings.Default.ApiBaseUri);
             APIClient.DefaultRequestHeaders.Accept.Clear();
             APIClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }

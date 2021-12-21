@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Core;
+using Core.Model;
+
 namespace Gui
 {
     public partial class LoginForm : Form
@@ -18,19 +21,36 @@ namespace Gui
             InitializeComponent();
         }
 
-        private void connectButton_Click(object sender, EventArgs e)
+        private async void connectButton_Click(object sender, EventArgs e)
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri(Properties.Settings.Default.ApiUrl);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Properties.Settings.Default.ApiKey);
+            connectButton.Enabled = false;
 
-            HttpResponseMessage e = client.GetAsync("/version");
-
-            if (true) //Successful login
+            try
             {
-                this.Close();
+                HttpContent content = new FormUrlEncodedContent(new[] {
+                    new KeyValuePair<string, string>("username", usernameTextBox.Text),
+                    new KeyValuePair<string, string>("password", passwordTextBox.Text),
+                });
+
+                using (HttpResponseMessage response = await API.APIClient.PostAsync("/login", content))
+                {
+                    if (response.IsSuccessStatusCode) //Successful login
+                    {
+                        User user = await response.Content.ReadAsAsync<User>();
+                        this.Close();
+                    }
+                    else
+                    {
+                        throw new Exception(response.ReasonPhrase);
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK);
+            }
+
+            connectButton.Enabled = true;
         }
     }
 }

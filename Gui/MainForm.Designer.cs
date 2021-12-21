@@ -1,4 +1,4 @@
-﻿namespace Blaze_Desktop
+﻿namespace Gui
 {
     partial class MainForm
     {
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ouvrirLaBaseDeDonnéesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,7 +38,6 @@
             this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.quitterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -47,6 +47,8 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.baseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.synchroniserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -64,10 +66,18 @@
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Image = global::Gui.Properties.Resources.CheckDot;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(98, 17);
+            this.toolStripStatusLabel1.Text = "Non connecté";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fichierToolStripMenuItem});
+            this.fichierToolStripMenuItem,
+            this.baseToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -108,7 +118,7 @@
             // 
             // paramètresToolStripMenuItem
             // 
-            this.paramètresToolStripMenuItem.Image = global::Blaze_Desktop.Properties.Resources.Settings_16x;
+            this.paramètresToolStripMenuItem.Image = global::Gui.Properties.Resources.Settings;
             this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
             this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.paramètresToolStripMenuItem.Text = "Paramètres";
@@ -125,13 +135,6 @@
             this.quitterToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.quitterToolStripMenuItem1.Text = "Quitter";
             this.quitterToolStripMenuItem1.Click += new System.EventHandler(this.quitterToolStripMenuItem1_Click);
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Image = global::Blaze_Desktop.Properties.Resources.CheckDot_16x;
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(98, 17);
-            this.toolStripStatusLabel1.Text = "Non connecté";
             // 
             // tabControl1
             // 
@@ -195,7 +198,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(755, 362);
+            this.tabPage4.Size = new System.Drawing.Size(778, 342);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Groupes";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -205,7 +208,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(755, 362);
+            this.tabPage5.Size = new System.Drawing.Size(778, 342);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Salles";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -215,7 +218,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 24);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(755, 362);
+            this.tabPage6.Size = new System.Drawing.Size(778, 342);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Enseignements";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -229,6 +232,22 @@
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "Emplois du temps";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // baseToolStripMenuItem
+            // 
+            this.baseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.synchroniserToolStripMenuItem});
+            this.baseToolStripMenuItem.Enabled = false;
+            this.baseToolStripMenuItem.Name = "baseToolStripMenuItem";
+            this.baseToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.baseToolStripMenuItem.Text = "Base";
+            // 
+            // synchroniserToolStripMenuItem
+            // 
+            this.synchroniserToolStripMenuItem.Image = global::Gui.Properties.Resources.Synchronize;
+            this.synchroniserToolStripMenuItem.Name = "synchroniserToolStripMenuItem";
+            this.synchroniserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.synchroniserToolStripMenuItem.Text = "Synchroniser";
             // 
             // MainForm
             // 
@@ -274,5 +293,7 @@
         private TabPage tabPage5;
         private TabPage tabPage6;
         private TabPage tabPage7;
+        private ToolStripMenuItem baseToolStripMenuItem;
+        private ToolStripMenuItem synchroniserToolStripMenuItem;
     }
 }

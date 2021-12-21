@@ -28,26 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.connectButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox2
+            // passwordTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 23);
-            this.textBox2.TabIndex = 14;
+            this.passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.passwordTextBox.Location = new System.Drawing.Point(123, 61);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(136, 23);
+            this.passwordTextBox.TabIndex = 14;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             // 
-            // textBox1
+            // usernameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 23);
-            this.textBox1.TabIndex = 12;
+            this.usernameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.usernameTextBox.Location = new System.Drawing.Point(123, 21);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(136, 23);
+            this.usernameTextBox.TabIndex = 12;
             // 
             // label1
             // 
@@ -69,10 +74,10 @@
             // 
             // connectButton
             // 
-            this.connectButton.Image = global::Blaze_Desktop.Properties.Resources.Checkmark_16x;
-            this.connectButton.Location = new System.Drawing.Point(262, 101);
+            this.connectButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.connectButton.Location = new System.Drawing.Point(151, 101);
             this.connectButton.Name = "connectButton";
-            this.connectButton.Size = new System.Drawing.Size(110, 23);
+            this.connectButton.Size = new System.Drawing.Size(108, 23);
             this.connectButton.TabIndex = 16;
             this.connectButton.Text = "Se connecter";
             this.connectButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -84,14 +89,14 @@
             this.AcceptButton = this.connectButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 136);
+            this.ClientSize = new System.Drawing.Size(271, 136);
             this.Controls.Add(this.connectButton);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(400, 175);
+            this.MinimumSize = new System.Drawing.Size(200, 175);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Connexion";
@@ -102,8 +107,8 @@
 
         #endregion
 
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox passwordTextBox;
+        private TextBox usernameTextBox;
         private Label label1;
         private Label label2;
         private Button connectButton;

@@ -1,4 +1,7 @@
 ﻿using Core.Properties;
+using Version = Core.Model.Version;
+using System.Net.Http.Headers;
+using Core;
 
 namespace Gui
 {
@@ -8,85 +11,90 @@ namespace Gui
         {
             InitializeComponent();
         }
-
-        private void Save()
+        private void APISettingsForm_Load(object sender, EventArgs e)
         {
-            Settings.Default.ApiUrl = this.textBox1.Text;
-            Settings.Default.ApiKey = this.textBox2.Text;
-            Settings.Default.AutoUpdate = this.autoUpdateCheckbox.Checked;
+            baseUriTextBox.Text = Settings.Default.ApiBaseUri;
+            keyTextBox.Text = Settings.Default.ApiKey;
+        }
+
+        private async void apiTestButton_Click(object sender, EventArgs e)
+        {
+            testButton.Enabled = false;
+            saveButton.Enabled = false;
+
+            try
+            {
+                HttpClient testClient = new HttpClient();
+                testClient.BaseAddress = new Uri(baseUriTextBox.Text);
+                testClient.DefaultRequestHeaders.Accept.Clear();
+                testClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                using (HttpResponseMessage response = await testClient.GetAsync("version"))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        Version version = await response.Content.ReadAsAsync<Version>();
+                        apiTestLabel.Image = Properties.Resources.Checkmark;
+                        apiTestLabel.Text = $"Version {version.major}.{version.minor}.{version.patch}";
+                    }
+                    else
+                    {
+                        throw new Exception(response.StatusCode.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Serveur inaccessible : {ex.Message}", "Connexion échouée", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                apiTestLabel.Image = Properties.Resources.Close;
+                apiTestLabel.Text = "";
+            }
+
+            testButton.Enabled = true;
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            Settings.Default.ApiBaseUri = baseUriTextBox.Text;
+            Settings.Default.ApiKey = keyTextBox.Text;
             Settings.Default.Save();
-        }
 
-        private void enregistrerToolStripButton_Click(object sender, EventArgs e)
-        {
-            Save();
-            enregistrerToolStripButton.Enabled = false;
-        }
+            API.Initialize();
 
-        private void SettingsForm_Load(object sender, EventArgs e)
-        {
-            textBox1.Text = Settings.Default.ApiUrl;
-            textBox2.Text = Settings.Default.ApiKey;
-            autoUpdateCheckbox.Checked = Settings.Default.AutoUpdate;
-
-            lastUpdateLabel.Text = Settings.Default.LastUpdate.ToString();
-            lastUpdatePollLabel.Text = Settings.Default.LastUpdatePoll.ToString();
+            saveButton.Enabled = false;
         }
 
         private bool Changed()
         {
-            return textBox1.Text != Settings.Default.ApiUrl
-                || textBox2.Text != Settings.Default.ApiKey
-                || autoUpdateCheckbox.Checked != Settings.Default.AutoUpdate;
+            return (Uri.IsWellFormedUriString(baseUriTextBox.Text, UriKind.Absolute)
+                && baseUriTextBox.Text != Settings.Default.ApiBaseUri)
+                || keyTextBox.Text != Settings.Default.ApiKey;
         }
 
-        private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void ValidateUri()
         {
-            if (Changed())
+            if (Uri.IsWellFormedUriString(baseUriTextBox.Text, UriKind.Absolute))
             {
-                DialogResult dialogResult = MessageBox.Show(this, "Voulez-vous sauvegarder vos changements ?", "Paramètres", MessageBoxButtons.YesNoCancel);
-                
-                if (dialogResult == DialogResult.Yes)
-                {
-                    Save();
-                }
-                else if (dialogResult == DialogResult.Cancel)
-                {
-                    e.Cancel = true;
-                }
+                errorProvider.SetError(baseUriTextBox, "");
+                testButton.Enabled = true;
+                saveButton.Enabled = Changed();
+            }
+            else
+            {
+                errorProvider.SetError(baseUriTextBox, "Addresse mal formée");
+                errorProvider.SetIconPadding(baseUriTextBox, 6);
+                testButton.Enabled = false;
+                saveButton.Enabled = false;
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void uriTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            enregistrerToolStripButton.Enabled = Changed();
+            ValidateUri();
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBox_TextChanged(object sender, EventArgs e)
         {
-            enregistrerToolStripButton.Enabled = Changed();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            enregistrerToolStripButton.Enabled = Changed();
-        }
-
-        private void pollUpdateButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private async void testAPIButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Version version = await Core.VersionProcessor.GetVersion();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            ValidateUri();
         }
     }
 }

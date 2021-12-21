@@ -63,9 +63,9 @@ namespace Gui.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CheckDot_16x {
+        internal static System.Drawing.Bitmap CheckDot {
             get {
-                object obj = ResourceManager.GetObject("CheckDot_16x", resourceCulture);
+                object obj = ResourceManager.GetObject("CheckDot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Gui.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Checkmark_16x {
+        internal static System.Drawing.Bitmap Checkmark {
             get {
-                object obj = ResourceManager.GetObject("Checkmark_16x", resourceCulture);
+                object obj = ResourceManager.GetObject("Checkmark", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Gui.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Checkmark_16x1 {
+        internal static System.Drawing.Bitmap Close {
             get {
-                object obj = ResourceManager.GetObject("Checkmark_16x1", resourceCulture);
+                object obj = ResourceManager.GetObject("Close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Gui.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Settings_16x {
+        internal static System.Drawing.Bitmap Question {
             get {
-                object obj = ResourceManager.GetObject("Settings_16x", resourceCulture);
+                object obj = ResourceManager.GetObject("Question", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Gui.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Synchronize_16x {
+        internal static System.Drawing.Bitmap Settings {
             get {
-                object obj = ResourceManager.GetObject("Synchronize_16x", resourceCulture);
+                object obj = ResourceManager.GetObject("Settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,19 @@ namespace Gui.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Test_16x {
+        internal static System.Drawing.Bitmap Synchronize {
             get {
-                object obj = ResourceManager.GetObject("Test_16x", resourceCulture);
+                object obj = ResourceManager.GetObject("Synchronize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Test {
+            get {
+                object obj = ResourceManager.GetObject("Test", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

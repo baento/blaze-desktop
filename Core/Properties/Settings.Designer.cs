@@ -25,14 +25,13 @@ namespace Core.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://test/")]
-        public string ApiUrl {
+        public string ApiBaseUri {
             get {
-                return ((string)(this["ApiUrl"]));
+                return ((string)(this["ApiBaseUri"]));
             }
             set {
-                this["ApiUrl"] = value;
+                this["ApiBaseUri"] = value;
             }
         }
         
@@ -62,10 +61,9 @@ namespace Core.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastUpdate {
+        public global::System.DateTime LastUpdate {
             get {
-                return ((string)(this["LastUpdate"]));
+                return ((global::System.DateTime)(this["LastUpdate"]));
             }
             set {
                 this["LastUpdate"] = value;
@@ -74,10 +72,9 @@ namespace Core.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastUpdatePoll {
+        public global::System.DateTime LastUpdatePoll {
             get {
-                return ((string)(this["LastUpdatePoll"]));
+                return ((global::System.DateTime)(this["LastUpdatePoll"]));
             }
             set {
                 this["LastUpdatePoll"] = value;

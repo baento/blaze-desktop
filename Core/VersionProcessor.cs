@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Version = Core.Model.Version;
 
 namespace Core
 {
@@ -10,7 +6,7 @@ namespace Core
     {
         public static async Task<Version> GetVersion()
         {
-            using (HttpResponseMessage response = await API.APIClient.GetAsync("/version"))
+            using (HttpResponseMessage response = await API.APIClient.GetAsync("version"))
             {
                 if (response.IsSuccessStatusCode)
                 {
@@ -18,7 +14,7 @@ namespace Core
                 }
                 else
                 {
-                    throw new Exception(response.ReasonPhrase);
+                    throw new Exception(response.StatusCode.ToString());
                 }
             }
         }
