@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blaze Desktop", "Blaze Desktop.csproj", "{BEB2E5E4-EE6E-4D4B-8CC5-8858B18A5686}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "..\Core\Core.csproj", "{DF632CA9-0553-4588-A131-CE3D02BBB80B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEB2E5E4-EE6E-4D4B-8CC5-8858B18A5686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEB2E5E4-EE6E-4D4B-8CC5-8858B18A5686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEB2E5E4-EE6E-4D4B-8CC5-8858B18A5686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEB2E5E4-EE6E-4D4B-8CC5-8858B18A5686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF632CA9-0553-4588-A131-CE3D02BBB80B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF632CA9-0553-4588-A131-CE3D02BBB80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF632CA9-0553-4588-A131-CE3D02BBB80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF632CA9-0553-4588-A131-CE3D02BBB80B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA8DC2A4-EF7F-450F-874A-D211635D8108}
+	EndGlobalSection
+EndGlobal
