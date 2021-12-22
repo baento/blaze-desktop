@@ -1,10 +1,12 @@
 ﻿namespace Core.Model
 {
-    public class User
+    public class User : Base
     {
-        public int Id { get; set; }
-        public string Handle { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public string[] Privileges { get; set; }
+
+        public Group[] Groups { get; set; }
     }
 }

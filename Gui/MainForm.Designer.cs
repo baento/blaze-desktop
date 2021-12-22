@@ -47,15 +47,28 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserHandle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserINE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserCreationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserUpdateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserDeletionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.GroupId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupHandle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupUsers = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.GroupCreationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupUpdateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupDeletionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Handle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.INE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -63,6 +76,13 @@
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -235,11 +255,14 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Handle,
-            this.LastName,
-            this.FirstName,
-            this.INE});
+            this.UserId,
+            this.UserHandle,
+            this.UserLastName,
+            this.UserFirstName,
+            this.UserINE,
+            this.UserCreationDate,
+            this.UserUpdateDate,
+            this.UserDeletionDate});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
@@ -248,8 +271,64 @@
             this.dataGridView1.Size = new System.Drawing.Size(772, 336);
             this.dataGridView1.TabIndex = 0;
             // 
+            // UserId
+            // 
+            this.UserId.DataPropertyName = "Id";
+            this.UserId.HeaderText = "Identifiant";
+            this.UserId.Name = "UserId";
+            this.UserId.ReadOnly = true;
+            this.UserId.Width = 146;
+            // 
+            // UserHandle
+            // 
+            this.UserHandle.DataPropertyName = "Handle";
+            this.UserHandle.HeaderText = "Nom d\'utilisateur";
+            this.UserHandle.Name = "UserHandle";
+            this.UserHandle.ReadOnly = true;
+            this.UserHandle.Width = 146;
+            // 
+            // UserLastName
+            // 
+            this.UserLastName.DataPropertyName = "LastName";
+            this.UserLastName.HeaderText = "Nom";
+            this.UserLastName.Name = "UserLastName";
+            this.UserLastName.Width = 145;
+            // 
+            // UserFirstName
+            // 
+            this.UserFirstName.DataPropertyName = "FirstName";
+            this.UserFirstName.HeaderText = "Prénom";
+            this.UserFirstName.Name = "UserFirstName";
+            this.UserFirstName.Width = 146;
+            // 
+            // UserINE
+            // 
+            this.UserINE.HeaderText = "INE";
+            this.UserINE.Name = "UserINE";
+            this.UserINE.ReadOnly = true;
+            this.UserINE.Width = 146;
+            // 
+            // UserCreationDate
+            // 
+            this.UserCreationDate.DataPropertyName = "CreationDate";
+            this.UserCreationDate.HeaderText = "Date de création";
+            this.UserCreationDate.Name = "UserCreationDate";
+            // 
+            // UserUpdateDate
+            // 
+            this.UserUpdateDate.DataPropertyName = "UpdateDate";
+            this.UserUpdateDate.HeaderText = "Date de mise à jour";
+            this.UserUpdateDate.Name = "UserUpdateDate";
+            // 
+            // UserDeletionDate
+            // 
+            this.UserDeletionDate.DataPropertyName = "DeletionDate";
+            this.UserDeletionDate.HeaderText = "Date de suppression";
+            this.UserDeletionDate.Name = "UserDeletionDate";
+            // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.splitContainer1);
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -257,6 +336,112 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Groupes";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Cursor = System.Windows.Forms.Cursors.VSplit;
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dataGridView2);
+            this.splitContainer1.Panel1.Cursor = System.Windows.Forms.Cursors.Default;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Panel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.splitContainer1.Size = new System.Drawing.Size(772, 336);
+            this.splitContainer1.SplitterDistance = 513;
+            this.splitContainer1.TabIndex = 1;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToOrderColumns = true;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GroupId,
+            this.GroupHandle,
+            this.GroupUsers,
+            this.GroupCreationDate,
+            this.GroupUpdateDate,
+            this.GroupDeletionDate});
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(513, 336);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            // 
+            // GroupId
+            // 
+            this.GroupId.DataPropertyName = "Id";
+            this.GroupId.HeaderText = "Identifiant";
+            this.GroupId.Name = "GroupId";
+            this.GroupId.ReadOnly = true;
+            // 
+            // GroupHandle
+            // 
+            this.GroupHandle.DataPropertyName = "Handle";
+            this.GroupHandle.HeaderText = "Nom";
+            this.GroupHandle.Name = "GroupHandle";
+            this.GroupHandle.ReadOnly = true;
+            // 
+            // GroupUsers
+            // 
+            this.GroupUsers.HeaderText = "Utilisateurs";
+            this.GroupUsers.Name = "GroupUsers";
+            this.GroupUsers.ReadOnly = true;
+            this.GroupUsers.Text = "...";
+            // 
+            // GroupCreationDate
+            // 
+            this.GroupCreationDate.DataPropertyName = "CreationDate";
+            this.GroupCreationDate.HeaderText = "Date de création";
+            this.GroupCreationDate.Name = "GroupCreationDate";
+            this.GroupCreationDate.ReadOnly = true;
+            // 
+            // GroupUpdateDate
+            // 
+            this.GroupUpdateDate.DataPropertyName = "UpdateDate";
+            this.GroupUpdateDate.HeaderText = "Dernière mise à jour";
+            this.GroupUpdateDate.Name = "GroupUpdateDate";
+            this.GroupUpdateDate.ReadOnly = true;
+            // 
+            // GroupDeletionDate
+            // 
+            this.GroupDeletionDate.DataPropertyName = "DeletionDate";
+            this.GroupDeletionDate.HeaderText = "Date de suppression";
+            this.GroupDeletionDate.Name = "GroupDeletionDate";
+            this.GroupDeletionDate.ReadOnly = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(255, 336);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(3, 19);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(249, 314);
+            this.listBox1.TabIndex = 0;
             // 
             // tabPage5
             // 
@@ -288,43 +473,6 @@
             this.tabPage7.Text = "Emplois du temps";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Identifiant";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Width = 146;
-            // 
-            // Handle
-            // 
-            this.Handle.DataPropertyName = "Handle";
-            this.Handle.HeaderText = "Nom d\'utilisateur";
-            this.Handle.Name = "Handle";
-            this.Handle.ReadOnly = true;
-            this.Handle.Width = 146;
-            // 
-            // LastName
-            // 
-            this.LastName.DataPropertyName = "LastName";
-            this.LastName.HeaderText = "Nom";
-            this.LastName.Name = "LastName";
-            this.LastName.Width = 145;
-            // 
-            // FirstName
-            // 
-            this.FirstName.DataPropertyName = "FirstName";
-            this.FirstName.HeaderText = "Prénom";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Width = 146;
-            // 
-            // INE
-            // 
-            this.INE.HeaderText = "INE";
-            this.INE.Name = "INE";
-            this.INE.ReadOnly = true;
-            this.INE.Width = 146;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -346,6 +494,13 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -375,10 +530,24 @@
         private ToolStripMenuItem synchroniserToolStripMenuItem;
         private DataGridView dataGridView1;
         private ToolStripMenuItem testToolStripMenuItem;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Handle;
-        private DataGridViewTextBoxColumn LastName;
-        private DataGridViewTextBoxColumn FirstName;
-        private DataGridViewTextBoxColumn INE;
+
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn UserId;
+        private DataGridViewTextBoxColumn UserHandle;
+        private DataGridViewTextBoxColumn UserLastName;
+        private DataGridViewTextBoxColumn UserFirstName;
+        private DataGridViewTextBoxColumn UserINE;
+        private DataGridViewTextBoxColumn UserCreationDate;
+        private DataGridViewTextBoxColumn UserUpdateDate;
+        private DataGridViewTextBoxColumn UserDeletionDate;
+        private DataGridViewTextBoxColumn GroupId;
+        private DataGridViewTextBoxColumn GroupHandle;
+        private DataGridViewButtonColumn GroupUsers;
+        private DataGridViewTextBoxColumn GroupCreationDate;
+        private DataGridViewTextBoxColumn GroupUpdateDate;
+        private DataGridViewTextBoxColumn GroupDeletionDate;
+        private SplitContainer splitContainer1;
+        private GroupBox groupBox1;
+        private ListBox listBox1;
     }
 }

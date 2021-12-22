@@ -14,6 +14,7 @@ namespace Gui
         private async void LoadBase()
         {
             dataGridView1.DataSource = await Core.UserProcessor.GetUsers(); 
+            dataGridView2.DataSource = await Core.GroupProcessor.GetGroups();
         }
 
         private void ouvrirLaBaseDeDonnéesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -36,6 +37,11 @@ namespace Gui
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadBase();
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            listBox1.DataSource = ((Group)dataGridView2.Rows[e.RowIndex].DataBoundItem).Users;
         }
     }
 }

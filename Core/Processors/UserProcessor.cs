@@ -9,7 +9,7 @@ namespace Core
         public static Task<User> GetUser(uint id)
         {
             return API.ApiUrl
-                .AppendPathSegment("users/")
+                .AppendPathSegment("users")
                 .AppendPathSegment(id)
                 .GetJsonAsync<User>();
         }
@@ -17,7 +17,7 @@ namespace Core
         public static Task<User[]> GetUsers()
         {
             return API.ApiUrl
-                .AppendPathSegment("users/")
+                .AppendPathSegment("users")
                 .GetJsonAsync<User[]>();
         }
     }

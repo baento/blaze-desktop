@@ -28,22 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             this.SuspendLayout();
+            // 
+            // webView21
+            // 
+            this.webView21.CreationProperties = null;
+            this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webView21.Location = new System.Drawing.Point(0, 0);
+            this.webView21.Name = "webView21";
+            this.webView21.Size = new System.Drawing.Size(594, 599);
+            this.webView21.Source = new System.Uri("http://localhost:8080/cas/login", System.UriKind.Absolute);
+            this.webView21.TabIndex = 0;
+            this.webView21.ZoomFactor = 1D;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 395);
+            this.ClientSize = new System.Drawing.Size(594, 599);
+            this.Controls.Add(this.webView21);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(200, 175);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Connexion";
+            ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
     }
 }
