@@ -1,7 +1,8 @@
 ﻿using Core.Properties;
 using Version = Core.Model.Version;
-using System.Net.Http.Headers;
 using Core;
+using Flurl;
+using Flurl.Http;
 
 namespace Gui
 {
@@ -15,33 +16,22 @@ namespace Gui
         {
             baseUriTextBox.Text = Settings.Default.ApiBaseUri;
             keyTextBox.Text = Settings.Default.ApiKey;
+
+            ValidateUri();
         }
 
-        private async void apiTestButton_Click(object sender, EventArgs e)
+        private async void testButton_Click(object sender, EventArgs e)
         {
             testButton.Enabled = false;
             saveButton.Enabled = false;
 
+
             try
             {
-                HttpClient testClient = new HttpClient();
-                testClient.BaseAddress = new Uri(baseUriTextBox.Text);
-                testClient.DefaultRequestHeaders.Accept.Clear();
-                testClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                Version version = await baseUriTextBox.Text.AppendPathSegment("version").GetJsonAsync<Version>();
 
-                using (HttpResponseMessage response = await testClient.GetAsync("version"))
-                {
-                    if (response.IsSuccessStatusCode)
-                    {
-                        Version version = await response.Content.ReadAsAsync<Version>();
-                        apiTestLabel.Image = Properties.Resources.Checkmark;
-                        apiTestLabel.Text = $"Version {version.major}.{version.minor}.{version.patch}";
-                    }
-                    else
-                    {
-                        throw new Exception(response.StatusCode.ToString());
-                    }
-                }
+                apiTestLabel.Image = Properties.Resources.Checkmark;
+                apiTestLabel.Text = $"Version {version.major}.{version.minor}.{version.patch}";
             }
             catch (Exception ex)
             {
@@ -59,7 +49,7 @@ namespace Gui
             Settings.Default.ApiKey = keyTextBox.Text;
             Settings.Default.Save();
 
-            API.Initialize();
+            API.BaseUrl = Settings.Default.ApiBaseUri;
 
             saveButton.Enabled = false;
         }

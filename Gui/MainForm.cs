@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Core.Model;
+using Flurl;
+using Flurl.Http;
 
 namespace Gui
 {
@@ -15,6 +9,11 @@ namespace Gui
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private async void LoadBase()
+        {
+            dataGridView1.DataSource = await Core.UserProcessor.GetUsers(); 
         }
 
         private void ouvrirLaBaseDeDonnéesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -32,6 +31,11 @@ namespace Gui
         {
             SettingsForm settingsForm = new SettingsForm();
             settingsForm.ShowDialog();
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadBase();
         }
     }
 }

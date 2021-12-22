@@ -11,16 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\Core\Properties\Settings.settings" Link="Properties\Settings.settings">
-      <Generator>PublicSettingsSingleFileGenerator</Generator>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 

@@ -38,22 +38,31 @@
             this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.quitterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.baseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.synchroniserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.baseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.synchroniserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Handle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.INE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -77,7 +86,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fichierToolStripMenuItem,
-            this.baseToolStripMenuItem});
+            this.baseToolStripMenuItem,
+            this.testToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -136,6 +146,29 @@
             this.quitterToolStripMenuItem1.Text = "Quitter";
             this.quitterToolStripMenuItem1.Click += new System.EventHandler(this.quitterToolStripMenuItem1_Click);
             // 
+            // baseToolStripMenuItem
+            // 
+            this.baseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.synchroniserToolStripMenuItem});
+            this.baseToolStripMenuItem.Enabled = false;
+            this.baseToolStripMenuItem.Name = "baseToolStripMenuItem";
+            this.baseToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.baseToolStripMenuItem.Text = "Base";
+            // 
+            // synchroniserToolStripMenuItem
+            // 
+            this.synchroniserToolStripMenuItem.Image = global::Gui.Properties.Resources.Synchronize;
+            this.synchroniserToolStripMenuItem.Name = "synchroniserToolStripMenuItem";
+            this.synchroniserToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.synchroniserToolStripMenuItem.Text = "Synchroniser";
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -185,6 +218,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dataGridView1);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -192,6 +226,27 @@
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Utilisateurs";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Handle,
+            this.LastName,
+            this.FirstName,
+            this.INE});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(772, 336);
+            this.dataGridView1.TabIndex = 0;
             // 
             // tabPage4
             // 
@@ -233,21 +288,42 @@
             this.tabPage7.Text = "Emplois du temps";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // baseToolStripMenuItem
+            // Id
             // 
-            this.baseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.synchroniserToolStripMenuItem});
-            this.baseToolStripMenuItem.Enabled = false;
-            this.baseToolStripMenuItem.Name = "baseToolStripMenuItem";
-            this.baseToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.baseToolStripMenuItem.Text = "Base";
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Identifiant";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 146;
             // 
-            // synchroniserToolStripMenuItem
+            // Handle
             // 
-            this.synchroniserToolStripMenuItem.Image = global::Gui.Properties.Resources.Synchronize;
-            this.synchroniserToolStripMenuItem.Name = "synchroniserToolStripMenuItem";
-            this.synchroniserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.synchroniserToolStripMenuItem.Text = "Synchroniser";
+            this.Handle.DataPropertyName = "Handle";
+            this.Handle.HeaderText = "Nom d\'utilisateur";
+            this.Handle.Name = "Handle";
+            this.Handle.ReadOnly = true;
+            this.Handle.Width = 146;
+            // 
+            // LastName
+            // 
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "Nom";
+            this.LastName.Name = "LastName";
+            this.LastName.Width = 145;
+            // 
+            // FirstName
+            // 
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "Prénom";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Width = 146;
+            // 
+            // INE
+            // 
+            this.INE.HeaderText = "INE";
+            this.INE.Name = "INE";
+            this.INE.ReadOnly = true;
+            this.INE.Width = 146;
             // 
             // MainForm
             // 
@@ -268,6 +344,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,5 +373,12 @@
         private TabPage tabPage7;
         private ToolStripMenuItem baseToolStripMenuItem;
         private ToolStripMenuItem synchroniserToolStripMenuItem;
+        private DataGridView dataGridView1;
+        private ToolStripMenuItem testToolStripMenuItem;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Handle;
+        private DataGridViewTextBoxColumn LastName;
+        private DataGridViewTextBoxColumn FirstName;
+        private DataGridViewTextBoxColumn INE;
     }
 }

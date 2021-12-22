@@ -1,17 +1,24 @@
-﻿using System.Net.Http.Headers;
+﻿using Core.Properties;
+using Flurl;
+using Flurl.Http;
 
 namespace Core
 {
     public class API
     {
-        public static HttpClient APIClient { get; set; }
+        public static string BaseUrl { get; set; }
+
+        public static string ApiKey { get; set; }
+
+        public static string ApiUrl
+        {
+            get { return BaseUrl.AppendPathSegment("api"); }
+        }
 
         public static void Initialize()
         {
-            APIClient = new HttpClient();
-            APIClient.BaseAddress = new Uri(Properties.Settings.Default.ApiBaseUri);
-            APIClient.DefaultRequestHeaders.Accept.Clear();
-            APIClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            BaseUrl = Settings.Default.ApiBaseUri;
+            ApiKey = Settings.Default.ApiKey;
         }
     }
 }
